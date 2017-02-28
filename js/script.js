@@ -6,3 +6,7 @@ $.ajax({
         $('#container').append(weather_data.main.temp)
     }
 })
+
+var to_be_run_on_server_response = function(weather_data) {
+    $('#container').append(weather_data.main.temp)
+};
