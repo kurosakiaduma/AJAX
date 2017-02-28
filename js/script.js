@@ -19,14 +19,21 @@ var to_be_run_on_server_response = function(weather_data) {
     $("ul#weather").append("<li><span class='sunset'>" + "Time of sunset in Los Angeles: " + timeSunset + "</span></li>");
 
 };
-
-
-
-$.ajax({
-    method: 'GET',
-    url: 'http://api.openweathermap.org/data/2.5/weather?lat=32.22&lon=-100.50&APPID=c6fdcf2d49a0bba3e14f310bd3d5cdc2',
-    success: to_be_run_on_server_response
-});
-
-
 //user interface logic
+function myFunction() {
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://api.openweathermap.org/data/2.5/weather?q=LosAngeles,us&appid=e42d32af9555a899db7106b67e9e5aae',
+        success: to_be_run_on_server_response
+    });
+};
+
+function myFunction2() {
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://api.openweathermap.org/data/2.5/weather?lat=32.22&lon=-100.50&APPID=c6fdcf2d49a0bba3e14f310bd3d5cdc2',
+        success: to_be_run_on_server_response
+    });
+};
