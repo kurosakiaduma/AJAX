@@ -12,7 +12,7 @@ var to_be_run_on_server_response = function(weather_data) {
 
     $("ul#weather").append("<li><span class='mintemp'>" + "Minimum Temperature: " + weather_data.main.temp_min + "</span></li>");
 
-    $("ul#weather").append("<li><span class='description'>" + "Description of the weather in Los Angeles: " + weather_data.weather[0].description + "</span></li>");
+    $("ul#weather").append("<li><span class='description'>" + "Description of the weather in "+ weather_data.name + ": " + weather_data.weather[0].description + "</span></li>");
 
     $("ul#weather").append("<li><span class='sunrise'>" + "Time of sunrise in Los Angeles: " + timeSunrise + "</span></li>");
 
