@@ -1,10 +1,10 @@
 //business logic
 var to_be_run_on_server_response = function(weather_data) {
-
+    $("ul#weather").empty();
     var timeSunrise = new Date(weather_data.sys.sunrise * 1000)
     var timeSunset = new Date(weather_data.sys.sunset * 1000)
 
-    $("h3#station").append(weather_data.name);
+    $("h3#station").text(weather_data.name);
 
     $("ul#weather").append("<li><span class='pressure'>" + "Pressure: " + weather_data.main.pressure + "</span></li>");
 
@@ -28,6 +28,7 @@ function myFunction() {
         success: to_be_run_on_server_response
     });
 };
+
 
 function myFunction2() {
 
