@@ -1,14 +1,22 @@
 //business logic
-$.ajax({
-    method: 'GET',
-    url: 'http://api.openweathermap.org/data/2.5/weather?q=LosAngeles,us&appid=e42d32af9555a899db7106b67e9e5aae',
-    success: function(weather_data) {
-        $('#container').append(weather_data.main.temp)
-    }
-})
-
 var to_be_run_on_server_response = function(weather_data) {
-    $('#container').append(weather_data.main.temp)
+
+    var timeSunrise = new Date(weather_data.sys.sunrise * 1000)
+    var timeSunset = new Date(weather_data.sys.sunset * 1000)
+
+    $("ul#weather").append("<li><span class='pressure'>" + "Pressure: " + weather_data.main.pressure + "</span></li>");
+
+    $("ul#weather").append("<li><span class='maxtemp'>" + "Maximum Temperature: " + weather_data.main.temp_max + "</span></li>");
+
+    $("ul#weather").append("<li><span class='mintemp'>" + "Minimum Temperature: " + weather_data.main.temp_min + "</span></li>");
+
+    $("ul#weather").append("<li><span class='description'>" + "Description of the weather in Los Angeles: " + weather_data.weather[0].description + "</span></li>");
+
+    $("ul#weather").append("<li><span class='sunrise'>" + "Time of sunrise in Los Angeles: " + timeSunrise + "</span></li>");
+
+    $("ul#weather").append("<li><span class='sunset'>" + "Time of sunset in Los Angeles: " + timeSunset + "</span></li>");
+
+
 };
 
 $.ajax({
