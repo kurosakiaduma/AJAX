@@ -4,6 +4,8 @@ var to_be_run_on_server_response = function(weather_data) {
     var timeSunrise = new Date(weather_data.sys.sunrise * 1000)
     var timeSunset = new Date(weather_data.sys.sunset * 1000)
 
+    $("h3#station").append(weather_data.name);
+
     $("ul#weather").append("<li><span class='pressure'>" + "Pressure: " + weather_data.main.pressure + "</span></li>");
 
     $("ul#weather").append("<li><span class='maxtemp'>" + "Maximum Temperature: " + weather_data.main.temp_max + "</span></li>");
@@ -15,7 +17,6 @@ var to_be_run_on_server_response = function(weather_data) {
     $("ul#weather").append("<li><span class='sunrise'>" + "Time of sunrise in Los Angeles: " + timeSunrise + "</span></li>");
 
     $("ul#weather").append("<li><span class='sunset'>" + "Time of sunset in Los Angeles: " + timeSunset + "</span></li>");
-
 
 };
 
